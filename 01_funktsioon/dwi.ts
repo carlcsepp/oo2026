@@ -1,7 +1,7 @@
 // Daily Water Intake
 
 function calculateDWI(weightKg: number): string {
-  const dwi = (weightKg * 35) / 1000;
+  const dwi = (weightKg * 35) / 1000; // 35ml is the recommended amount of water per kg of bodyweight
   return `Your daily water intake should be approximately ${dwi.toFixed(1)} liters`;
 }
 
