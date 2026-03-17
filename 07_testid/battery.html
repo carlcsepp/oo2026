@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        input, button {
+            padding: 6px 10px;
+            margin: 4px 0;
+            font-size: 14px;
+        }
+
+        #warning { color: red; font-weight: bold; }
+        #info { margin-top: 16px; font-size: 15px; }
+    </style>
+</head>
+<body>
+    <h2>Battery Charger</h2>
+
+    <label>Seconds to charge:</label><br>
+    <input type="number" id="seconds" value="60"><br>
+    <button id="chargeBtn">Charge</button>
+
+    <div id="info"></div>
+    <div id="warning"></div>
+
+    <script src="battery.js"></script>
+    <script>
+        const battery = new Battery(5000, 2500);
+
+        function updateDisplay(result) {
+            document.getElementById("info").innerHTML =
+                "Charge level: " + battery.getChargeLevel().toFixed(1) + " mAh<br>" +
+                "Percentage: " + battery.getChargePercentage().toFixed(1) + "%";
+
+            if (result === "overcharged") {
+                document.getElementById("warning").textContent = "Warning: Battery overcharged!";
+            } else if (result === "empty") {
+                document.getElementById("warning").textContent = "Warning: Battery is empty!";
+            } else {
+                document.getElementById("warning").textContent = "";
+            }
+        }
+
+        // Show initial state
+        updateDisplay("ok");
+
+        document.getElementById("chargeBtn").addEventListener("click", function() {
+            const seconds = parseFloat(document.getElementById("seconds").value);
+            const result = battery.charge(seconds);
+            updateDisplay(result);
+        });
+    </script>
+</body>
+</html>
