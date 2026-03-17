@@ -12,9 +12,9 @@ function triangle(){
     const canvas=document.getElementById("board1");
     const ctx=canvas.getContext("2d");
 
-    // Draws the triangle
-    let t1 = new Triangle(80, 100, 90, 60, 150, 200); // a, b, c, height, x, y
-    let t2 = new Triangle (50, 80, 20, 30, 10, 40);
+    // Draws the triangle using the values: a, b, c, height and coordinates x, y for the positioning
+    let t1 = new Triangle(50, 80, 20, 30, 10, 40);
+    let t2 = new Triangle(80, 100, 90, 60, 150, 200); 
     t1.draw(ctx);
     t2.draw(ctx);
 
