@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Triangle</title>
+<script src="homework.js"></script>
+
+<script>
+
+function triangle(){
+
+    const canvas=document.getElementById("board1");
+    const ctx=canvas.getContext("2d");
+
+    // Draws the triangle
+    let t1 = new Triangle(80, 100, 90, 60, 150, 200); // a, b, c, height, x, y
+    t1.draw(ctx);
+
+    r1.draw(ctx);
+    r2.draw(ctx);
+
+}
+
+</script>
+
+</head>
+
+<body onload="triangle()">
+
+<canvas id="board1" width="400" height="300"></canvas>
+
+</body>
+</html>
