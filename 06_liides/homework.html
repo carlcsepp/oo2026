@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Light/Dark Mode</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    transition: background 0.3s, color 0.3s;
+    padding: 20px;
+  }
+
+  .dark {
+    background-color: #020202;
+    color: #f0f0f0;
+  }
+
+  .light {
+    background-color: #f0f0f0;
+    color: #020202;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body class="light">
+
+<h2>Light / Dark Mode Toggle</h2>
+<p>This is a simple demo of switching themes with TypeScript.</p>
+
+<button id="toggleBtn">Switch to Dark Mode</button>
+
+<!-- Include compiled JS -->
+<script src="homework.js"></script>
+</body>
+</html>
